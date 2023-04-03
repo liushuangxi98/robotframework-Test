@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.9.7 on win32)" generated="20230218 13:40:43.621" rpa="false" schemaversion="3">
+<suite id="s1" name="注册验证" source="D:\file\python\水果商城自动化测试系统\用例脚本区\注册验证.robot">
+<test id="s1-t1" name="注册验证测试" line="13">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}'${用例名称}'用例测试开始,描述:${描述}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="FAIL" starttime="20230218 13:40:47.679" endtime="20230218 13:40:47.679"/>
+</kw>
+<kw name="注册账号" library="fun_common">
+<arg>${用户名}</arg>
+<arg>${密码}</arg>
+<arg>${姓名}</arg>
+<arg>${电话}</arg>
+<arg>${收货地址}</arg>
+<arg>${预期结果}</arg>
+<doc>注册账号的业务功能</doc>
+<status status="NOT RUN" starttime="20230218 13:40:47.679" endtime="20230218 13:40:47.679"/>
+</kw>
+<status status="FAIL" starttime="20230218 13:40:47.678" endtime="20230218 13:40:47.679">Execution terminated by signal</status>
+</test>
+<status status="FAIL" starttime="20230218 13:40:43.622" endtime="20230218 13:40:47.679"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="注册验证">注册验证</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

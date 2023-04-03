@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.9.7 on win32)" generated="20230305 12:47:46.209" rpa="false" schemaversion="3">
+<suite id="s1" name="购物结算" source="D:\file\python\水果商城自动化测试系统\用例脚本区\购物结算.robot">
+<test id="s1-t1" name="购物结算测试" line="24">
+<kw name="Set Test Variable" library="BuiltIn" type="SETUP">
+<arg>@{商品列表}</arg>
+<arg>split_str</arg>
+<arg>${商品}</arg>
+<arg>_</arg>
+<arg>Set Test Variable</arg>
+<arg>@{商品数量}</arg>
+<arg>split_str</arg>
+<arg>${数量}</arg>
+<arg>_</arg>
+<arg>Set Test Variable</arg>
+<arg>@{length}</arg>
+<arg>Get Length</arg>
+<arg>${商品列表}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230305 12:47:46.328" level="FAIL">Variable '@{商品数量}' not found.</msg>
+<status status="FAIL" starttime="20230305 12:47:46.327" endtime="20230305 12:47:46.328"/>
+</kw>
+<status status="FAIL" starttime="20230305 12:47:46.327" endtime="20230305 12:47:46.328">Setup failed:
+Variable '@{商品数量}' not found.</status>
+</test>
+<status status="FAIL" starttime="20230305 12:47:46.210" endtime="20230305 12:47:46.328"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="购物结算">购物结算</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.9.7 on win32)" generated="20230305 12:39:13.723" rpa="false" schemaversion="3">
+<suite id="s1" name="购物结算" source="D:\file\python\水果商城自动化测试系统\用例脚本区\购物结算.robot">
+<test id="s1-t1" name="购物结算测试" line="18">
+<kw name="购物结算初始化" type="SETUP">
+<kw name="Split Str" library="common">
+<var>@{商品列表}</var>
+<arg>${商品}</arg>
+<doc>分隔字符串
+:param s: 需要分割的字符串
+:param i: 分割标注位
+:return:</doc>
+<msg timestamp="20230305 12:39:13.837" level="INFO">@{商品列表} = [ 三华李_蜜柚 ]</msg>
+<status status="PASS" starttime="20230305 12:39:13.837" endtime="20230305 12:39:13.837"/>
+</kw>
+<kw name="Split Str" library="common">
+<var>@{商品数量}</var>
+<arg>${数量}</arg>
+<doc>分隔字符串
+:param s: 需要分割的字符串
+:param i: 分割标注位
+:return:</doc>
+<msg timestamp="20230305 12:39:13.838" level="INFO">@{商品数量} = [ 1_1 ]</msg>
+<status status="PASS" starttime="20230305 12:39:13.837" endtime="20230305 12:39:13.838"/>
+</kw>
+<kw name="${length} = Get Length">
+<arg>${商品列表}</arg>
+<msg timestamp="20230305 12:39:13.839" level="FAIL">No keyword with name '${length} = Get Length' found.</msg>
+<status status="FAIL" starttime="20230305 12:39:13.839" endtime="20230305 12:39:13.839"/>
+</kw>
+<status status="FAIL" starttime="20230305 12:39:13.837" endtime="20230305 12:39:13.839"/>
+</kw>
+<status status="FAIL" starttime="20230305 12:39:13.837" endtime="20230305 12:39:13.840">Setup failed:
+No keyword with name '${length} = Get Length' found.</status>
+</test>
+<status status="FAIL" starttime="20230305 12:39:13.724" endtime="20230305 12:39:13.840"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="购物结算">购物结算</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

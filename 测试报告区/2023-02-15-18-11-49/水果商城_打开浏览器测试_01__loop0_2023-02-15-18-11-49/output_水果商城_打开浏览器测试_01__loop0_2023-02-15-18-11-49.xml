@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.9.7 on win32)" generated="20230215 18:11:49.267" rpa="false" schemaversion="3">
+<suite id="s1" name="链接检查" source="D:\file\python\水果商城自动化测试系统\测试用例区\链接检查.robot">
+<test id="s1-t1" name="链接检查测试" line="23">
+<kw name="split_str">
+<var>@{browser_list}</var>
+<arg>${浏览器列表}</arg>
+<msg timestamp="20230215 18:11:49.374" level="FAIL">No keyword with name 'split_str' found.</msg>
+<status status="FAIL" starttime="20230215 18:11:49.374" endtime="20230215 18:11:49.374"/>
+</kw>
+<kw name="split_str">
+<var>@{url_list}</var>
+<arg>${链接}</arg>
+<status status="NOT RUN" starttime="20230215 18:11:49.376" endtime="20230215 18:11:49.376"/>
+</kw>
+<for flavor="IN">
+<var>${i_browser}</var>
+<value>@{browser_list}</value>
+<iter>
+<var name="${i_browser}"/>
+<kw name="open_many_url">
+<arg>${url_list}</arg>
+<arg>${i_browser}</arg>
+<doc>自己定义的打开多个浏览器的综合方法</doc>
+<status status="NOT RUN" starttime="20230215 18:11:49.376" endtime="20230215 18:11:49.376"/>
+</kw>
+<status status="NOT RUN" starttime="20230215 18:11:49.376" endtime="20230215 18:11:49.376"/>
+</iter>
+<status status="NOT RUN" starttime="20230215 18:11:49.376" endtime="20230215 18:11:49.376"/>
+</for>
+<status status="FAIL" starttime="20230215 18:11:49.372" endtime="20230215 18:11:49.376">No keyword with name 'split_str' found.</status>
+</test>
+<status status="FAIL" starttime="20230215 18:11:49.268" endtime="20230215 18:11:49.377"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="链接检查">链接检查</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230215 18:11:49.370" level="ERROR">Error in file 'D:\file\python\水果商城自动化测试系统\测试用例区\链接检查.robot' on line 3: Library '..\common.py' does not exist.</msg>
+<msg timestamp="20230215 18:11:49.372" level="ERROR">Error in file 'D:\file\python\水果商城自动化测试系统\测试用例区\链接检查.robot' on line 5: Resource file 'rf_common.robot' does not exist.</msg>
+</errors>
+</robot>

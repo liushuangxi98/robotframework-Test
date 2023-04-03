@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.9.7 on win32)" generated="20230304 22:31:33.399" rpa="false" schemaversion="3">
+<suite id="s1" name="购物结算" source="D:\file\python\水果商城自动化测试系统\用例脚本区\购物结算.robot">
+<test id="s1-t1" name="购物结算测试" line="16">
+<kw name="登录用户账号" library="fun_common">
+<arg>${用户名}</arg>
+<arg>${密码}</arg>
+<doc>登录用户账号的业务功能封装关键字</doc>
+<kw name="open_one_url" library="rf_common">
+<arg>http://localhost:8999/emall_ssm_mysql_war_exploded/index/login</arg>
+<arg>edge</arg>
+<doc>自己定义的打开一个浏览器的综合方法</doc>
+<kw name="Get Current Date" library="DateTime">
+<var>${time_start}</var>
+<arg>result_format=%Y年%m月%d日%H时%M分%S秒</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230304 22:31:33.510" level="INFO">${time_start} = 2023年03月04日22时31分33秒</msg>
+<status status="PASS" starttime="20230304 22:31:33.510" endtime="20230304 22:31:33.510"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${speed_time_s}</var>
+<arg>time.time()</arg>
+<arg>modules=time</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230304 22:31:33.510" level="INFO">${speed_time_s} = 1677940293.5103834</msg>
+<status status="PASS" starttime="20230304 22:31:33.510" endtime="20230304 22:31:33.510"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>打开浏览器开始时间：${time_start}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230304 22:31:33.510" level="INFO">打开浏览器开始时间：2023年03月04日22时31分33秒</msg>
+<status status="PASS" starttime="20230304 22:31:33.510" endtime="20230304 22:31:33.510"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>正在打开${browser}浏览器的${url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230304 22:31:33.510" level="INFO">正在打开edge浏览器的http://localhost:8999/emall_ssm_mysql_war_exploded/index/login</msg>
+<status status="PASS" starttime="20230304 22:31:33.510" endtime="20230304 22:31:33.510"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230304 22:31:33.511" level="INFO">Opening browser 'edge' to base url 'http://localhost:8999/emall_ssm_mysql_war_exploded/index/login'.</msg>
+<status status="PASS" starttime="20230304 22:31:33.510" endtime="20230304 22:31:35.001"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230304 22:31:35.001" endtime="20230304 22:31:35.113"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${run_speed}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230304 22:31:35.114" endtime="20230304 22:31:35.114"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${url_title}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230304 22:31:35.417" level="INFO">${url_title} = 登录</msg>
+<status status="PASS" starttime="20230304 22:31:35.114" endtime="20230304 22:31:35.417"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${time_end}</var>
+<arg>result_format=%Y年%m月%d日%H时%M分%S秒</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230304 22:31:35.417" level="INFO">${time_end} = 2023年03月04日22时31分35秒</msg>
+<status status="PASS" starttime="20230304 22:31:35.417" endtime="20230304 22:31:35.417"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${speed_time_e}</var>
+<arg>time.time()</arg>
+<arg>modules=time</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230304 22:31:35.417" level="INFO">${speed_time_e} = 1677940295.4165545</msg>
+<status status="PASS" starttime="20230304 22:31:35.417" endtime="20230304 22:31:35.417"/>
+</kw>
+<kw name="Calculate Time" library="common">
+<var>${time_spend}</var>
+<arg>${speed_time_e}</arg>
+<arg>${speed_time_s}</arg>
+<doc>计算时间花费
+:param time_end: 开始时间
+:param time_start: 结束时间
+:return: 花费的时间，秒</doc>
+<msg timestamp="20230304 22:31:35.417" level="INFO">1.91</msg>
+<msg timestamp="20230304 22:31:35.417" level="INFO">${time_spend} = 1.91</msg>
+<status status="PASS" starttime="20230304 22:31:35.417" endtime="20230304 22:31:35.417"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>打开浏览器结束时间：${time_end}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230304 22:31:35.417" level="INFO">打开浏览器结束时间：2023年03月04日22时31分35秒</msg>
+<status status="PASS" starttime="20230304 22:31:35.417" endtime="20230304 22:31:35.417"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${url}的标题为${browser}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230304 22:31:35.418" level="INFO">http://localhost:8999/emall_ssm_mysql_war_exploded/index/login的标题为edge</msg>
+<status status="PASS" starttime="20230304 22:31:35.418" endtime="20230304 22:31:35.418"/>
+</kw>
+<kw name="Should Not Be Equal" library="BuiltIn">
+<arg>${url_title}</arg>
+<arg>${fail_title}</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" starttime="20230304 22:31:35.418" endtime="20230304 22:31:35.418"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${time_spend}&lt;10</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230304 22:31:35.418" endtime="20230304 22:31:35.418"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>测试步骤：${url}在${browser}浏览器打开测试耗时：${time_spend}s，测试PASS,</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230304 22:31:35.418" endtime="20230304 22:31:35.418"/>
+</kw>
+<status status="PASS" starttime="20230304 22:31:33.509" endtime="20230304 22:31:35.418"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230304 22:31:36.419" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230304 22:31:35.418" endtime="20230304 22:31:36.419"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="main"]/div/div/div/form/ul/li[1]/input</arg>
+<arg>${account}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230304 22:31:36.419" level="INFO">Typing text 'ntt1' into text field 'xpath=//*[@id="main"]/div/div/div/form/ul/li[1]/input'.</msg>
+<status status="PASS" starttime="20230304 22:31:36.419" endtime="20230304 22:31:37.360"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="main"]/div/div/div/form/ul/li[2]/input</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230304 22:31:37.360" level="INFO">Typing text '456' into text field 'xpath=//*[@id="main"]/div/div/div/form/ul/li[2]/input'.</msg>
+<status status="PASS" starttime="20230304 22:31:37.360" endtime="20230304 22:31:38.300"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="main"]/div/div/div/form/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230304 22:31:38.300" level="INFO">Clicking element 'xpath=//*[@id="main"]/div/div/div/form/input'.</msg>
+<status status="PASS" starttime="20230304 22:31:38.300" endtime="20230304 22:31:38.944"/>
+</kw>
+<status status="PASS" starttime="20230304 22:31:33.509" endtime="20230304 22:31:38.944"/>
+</kw>
+<kw name="搜索并加购物车" library="fun_common">
+<arg>${商品}</arg>
+<doc>在搜索栏搜索name商品</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="searchss"]/div/div[2]/form/input</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230304 22:31:38.944" level="INFO">Typing text '三华李' into text field 'xpath=//*[@id="searchss"]/div/div[2]/form/input'.</msg>
+<status status="PASS" starttime="20230304 22:31:38.944" endtime="20230304 22:31:39.890"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230304 22:31:40.891" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230304 22:31:39.890" endtime="20230304 22:31:40.891"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="searchss"]/div/div[2]/form/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230304 22:31:40.891" level="INFO">Clicking element 'xpath=//*[@id="searchss"]/div/div[2]/form/button'.</msg>
+<status status="PASS" starttime="20230304 22:31:40.891" endtime="20230304 22:31:41.554"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230304 22:31:42.556" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230304 22:31:41.554" endtime="20230304 22:31:42.556"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="main"]/div[1]/div/div/p[3]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230304 22:31:42.556" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[1]/div/div/p[3]'.</msg>
+<status status="PASS" starttime="20230304 22:31:42.556" endtime="20230304 22:31:43.182"/>
+</kw>
+<status status="PASS" starttime="20230304 22:31:38.944" endtime="20230304 22:31:43.182"/>
+</kw>
+<kw name="搜索并加购物车" library="fun_common">
+<arg>${商品2}</arg>
+<doc>在搜索栏搜索name商品</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="searchss"]/div/div[2]/form/input</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230304 22:31:43.184" level="INFO">Typing text '蜜柚' into text field 'xpath=//*[@id="searchss"]/div/div[2]/form/input'.</msg>
+<status status="PASS" starttime="20230304 22:31:43.183" endtime="20230304 22:31:44.123"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230304 22:31:45.123" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230304 22:31:44.123" endtime="20230304 22:31:45.123"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="searchss"]/div/div[2]/form/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230304 22:31:45.124" level="INFO">Clicking element 'xpath=//*[@id="searchss"]/div/div[2]/form/button'.</msg>
+<status status="PASS" starttime="20230304 22:31:45.123" endtime="20230304 22:31:45.768"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230304 22:31:46.768" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230304 22:31:45.768" endtime="20230304 22:31:46.768"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="main"]/div[1]/div/div/p[3]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230304 22:31:46.768" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[1]/div/div/p[3]'.</msg>
+<status status="PASS" starttime="20230304 22:31:46.768" endtime="20230304 22:31:47.396"/>
+</kw>
+<status status="PASS" starttime="20230304 22:31:43.182" endtime="20230304 22:31:47.396"/>
+</kw>
+<kw name="进入购物车" library="fun_common">
+<doc>点击进入购物车,并返回当前购物车的总额</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="searchss"]/div/div[3]/a/p</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230304 22:31:47.396" level="INFO">Clicking element 'xpath=//*[@id="searchss"]/div/div[3]/a/p'.</msg>
+<status status="PASS" starttime="20230304 22:31:47.396" endtime="20230304 22:31:48.062"/>
+</kw>
+<status status="PASS" starttime="20230304 22:31:47.396" endtime="20230304 22:31:48.062"/>
+</kw>
+<kw name="点击结算" library="fun_common">
+<var>${商品金额}</var>
+<doc>点击结算,并返回当前购物车的总额</doc>
+<msg timestamp="20230304 22:31:48.062" level="FAIL">Keyword 'fun_common.点击结算' expected 1 argument, got 0.</msg>
+<status status="FAIL" starttime="20230304 22:31:48.062" endtime="20230304 22:31:48.062"/>
+</kw>
+<kw name="查看订单" library="fun_common">
+<status status="NOT RUN" starttime="20230304 22:31:48.062" endtime="20230304 22:31:48.062"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${商品金额}</arg>
+<arg>${预期金额}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20230304 22:31:48.062" endtime="20230304 22:31:48.062"/>
+</kw>
+<status status="FAIL" starttime="20230304 22:31:33.509" endtime="20230304 22:31:48.062">Keyword 'fun_common.点击结算' expected 1 argument, got 0.</status>
+</test>
+<status status="FAIL" starttime="20230304 22:31:33.400" endtime="20230304 22:31:48.063"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="购物结算">购物结算</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

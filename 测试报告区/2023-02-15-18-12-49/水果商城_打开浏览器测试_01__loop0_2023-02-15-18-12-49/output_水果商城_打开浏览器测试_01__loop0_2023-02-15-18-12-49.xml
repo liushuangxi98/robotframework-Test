@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.9.7 on win32)" generated="20230215 18:12:49.757" rpa="false" schemaversion="3">
+<suite id="s1" name="链接检查" source="D:\file\python\水果商城自动化测试系统\测试用例区\链接检查.robot">
+<test id="s1-t1" name="链接检查测试" line="23">
+<kw name="Split Str" library="common">
+<var>@{browser_list}</var>
+<arg>${浏览器列表}</arg>
+<doc>分隔字符串
+:param s: 需要分割的字符串
+:param i: 分割标注位
+:return:</doc>
+<msg timestamp="20230215 18:12:49.851" level="INFO">@{browser_list} = [ edge | chrome ]</msg>
+<status status="PASS" starttime="20230215 18:12:49.851" endtime="20230215 18:12:49.851"/>
+</kw>
+<kw name="Split Str" library="common">
+<var>@{url_list}</var>
+<arg>${链接}</arg>
+<doc>分隔字符串
+:param s: 需要分割的字符串
+:param i: 分割标注位
+:return:</doc>
+<msg timestamp="20230215 18:12:49.851" level="INFO">@{url_list} = [ http://localhost:8999/emall_ssm_mysql_war_exploded/index/login ]</msg>
+<status status="PASS" starttime="20230215 18:12:49.851" endtime="20230215 18:12:49.851"/>
+</kw>
+<for flavor="IN">
+<var>${i_browser}</var>
+<value>@{browser_list}</value>
+<iter>
+<var name="${i_browser}">edge</var>
+<kw name="open_many_url">
+<arg>${url_list}</arg>
+<arg>${i_browser}</arg>
+<doc>自己定义的打开多个浏览器的综合方法</doc>
+<for flavor="IN">
+<var>${url}</var>
+<value>@{url_list}</value>
+<iter>
+<var name="${url}">http://localhost:8999/emall_ssm_mysql_war_exploded/index/login</var>
+<kw name="open_one_url" library="rf_common">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>自己定义的打开一个浏览器的综合方法</doc>
+<kw name="Get Current Date" library="DateTime">
+<var>${time_start}</var>
+<arg>result_format=%Y年%m月%d日%H时%M分%S秒</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230215 18:12:49.852" level="INFO">${time_start} = 2023年02月15日18时12分49秒</msg>
+<status status="PASS" starttime="20230215 18:12:49.852" endtime="20230215 18:12:49.852"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${speed_time_s}</var>
+<arg>time.time()</arg>
+<arg>modules=time</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230215 18:12:49.852" level="INFO">${speed_time_s} = 1676455969.8517506</msg>
+<status status="PASS" starttime="20230215 18:12:49.852" endtime="20230215 18:12:49.852"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>打开浏览器开始时间：${time_start}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230215 18:12:49.852" level="INFO">打开浏览器开始时间：2023年02月15日18时12分49秒</msg>
+<status status="PASS" starttime="20230215 18:12:49.852" endtime="20230215 18:12:49.852"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>正在打开${browser}浏览器的${url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230215 18:12:49.852" level="INFO">正在打开edge浏览器的http://localhost:8999/emall_ssm_mysql_war_exploded/index/login</msg>
+<status status="PASS" starttime="20230215 18:12:49.852" endtime="20230215 18:12:49.852"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230215 18:12:49.853" level="INFO">Opening browser 'edge' to base url 'http://localhost:8999/emall_ssm_mysql_war_exploded/index/login'.</msg>
+<status status="PASS" starttime="20230215 18:12:49.852" endtime="20230215 18:12:50.983"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230215 18:12:50.983" endtime="20230215 18:12:51.096"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${run_speed}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230215 18:12:51.097" endtime="20230215 18:12:51.097"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${url_title}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230215 18:12:52.100" level="INFO">${url_title} = 登录</msg>
+<status status="PASS" starttime="20230215 18:12:51.097" endtime="20230215 18:12:52.100"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${time_end}</var>
+<arg>result_format=%Y年%m月%d日%H时%M分%S秒</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230215 18:12:52.100" level="INFO">${time_end} = 2023年02月15日18时12分52秒</msg>
+<status status="PASS" starttime="20230215 18:12:52.100" endtime="20230215 18:12:52.100"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${speed_time_e}</var>
+<arg>time.time()</arg>
+<arg>modules=time</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230215 18:12:52.100" level="INFO">${speed_time_e} = 1676455972.0996819</msg>
+<status status="PASS" starttime="20230215 18:12:52.100" endtime="20230215 18:12:52.100"/>
+</kw>
+<kw name="Calculate Time" library="common">
+<var>${time_spend}</var>
+<arg>${speed_time_e}</arg>
+<arg>${speed_time_s}</arg>
+<doc>计算时间花费
+:param time_end: 开始时间
+:param time_start: 结束时间
+:return: 花费的时间，秒</doc>
+<msg timestamp="20230215 18:12:52.100" level="INFO">2.25</msg>
+<msg timestamp="20230215 18:12:52.100" level="INFO">${time_spend} = 2.25</msg>
+<status status="PASS" starttime="20230215 18:12:52.100" endtime="20230215 18:12:52.100"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>打开浏览器结束时间：${time_end}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230215 18:12:52.101" level="INFO">打开浏览器结束时间：2023年02月15日18时12分52秒</msg>
+<status status="PASS" starttime="20230215 18:12:52.100" endtime="20230215 18:12:52.101"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${url}的标题为${browser}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230215 18:12:52.101" level="INFO">http://localhost:8999/emall_ssm_mysql_war_exploded/index/login的标题为edge</msg>
+<status status="PASS" starttime="20230215 18:12:52.101" endtime="20230215 18:12:52.101"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>本次测试耗时：${time_spend}s</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230215 18:12:52.101" endtime="20230215 18:12:52.101"/>
+</kw>
+<kw name="Should Not Be Equal" library="BuiltIn">
+<arg>${url_title}</arg>
+<arg>${fail_title}</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" starttime="20230215 18:12:52.101" endtime="20230215 18:12:52.101"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${time_spend}&lt;10</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230215 18:12:52.101" endtime="20230215 18:12:52.101"/>
+</kw>
+<status status="PASS" starttime="20230215 18:12:49.852" endtime="20230215 18:12:52.101"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230215 18:12:52.101" endtime="20230215 18:12:55.132"/>
+</kw>
+<status status="PASS" starttime="20230215 18:12:49.852" endtime="20230215 18:12:55.132"/>
+</iter>
+<status status="PASS" starttime="20230215 18:12:49.852" endtime="20230215 18:12:55.132"/>
+</for>
+<status status="PASS" starttime="20230215 18:12:49.851" endtime="20230215 18:12:55.132"/>
+</kw>
+<status status="PASS" starttime="20230215 18:12:49.851" endtime="20230215 18:12:55.132"/>
+</iter>
+<iter>
+<var name="${i_browser}">chrome</var>
+<kw name="open_many_url">
+<arg>${url_list}</arg>
+<arg>${i_browser}</arg>
+<doc>自己定义的打开多个浏览器的综合方法</doc>
+<for flavor="IN">
+<var>${url}</var>
+<value>@{url_list}</value>
+<iter>
+<var name="${url}">http://localhost:8999/emall_ssm_mysql_war_exploded/index/login</var>
+<kw name="open_one_url" library="rf_common">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>自己定义的打开一个浏览器的综合方法</doc>
+<kw name="Get Current Date" library="DateTime">
+<var>${time_start}</var>
+<arg>result_format=%Y年%m月%d日%H时%M分%S秒</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230215 18:12:55.133" level="INFO">${time_start} = 2023年02月15日18时12分55秒</msg>
+<status status="PASS" starttime="20230215 18:12:55.133" endtime="20230215 18:12:55.133"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${speed_time_s}</var>
+<arg>time.time()</arg>
+<arg>modules=time</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230215 18:12:55.133" level="INFO">${speed_time_s} = 1676455975.133151</msg>
+<status status="PASS" starttime="20230215 18:12:55.133" endtime="20230215 18:12:55.133"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>打开浏览器开始时间：${time_start}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230215 18:12:55.133" level="INFO">打开浏览器开始时间：2023年02月15日18时12分55秒</msg>
+<status status="PASS" starttime="20230215 18:12:55.133" endtime="20230215 18:12:55.133"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>正在打开${browser}浏览器的${url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230215 18:12:55.133" level="INFO">正在打开chrome浏览器的http://localhost:8999/emall_ssm_mysql_war_exploded/index/login</msg>
+<status status="PASS" starttime="20230215 18:12:55.133" endtime="20230215 18:12:55.133"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230215 18:12:55.134" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8999/emall_ssm_mysql_war_exploded/index/login'.</msg>
+<status status="PASS" starttime="20230215 18:12:55.133" endtime="20230215 18:12:57.392"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230215 18:12:57.392" endtime="20230215 18:12:58.506"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${run_speed}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230215 18:12:58.506" endtime="20230215 18:12:58.506"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${url_title}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230215 18:12:59.510" level="INFO">${url_title} = 登录</msg>
+<status status="PASS" starttime="20230215 18:12:58.506" endtime="20230215 18:12:59.510"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${time_end}</var>
+<arg>result_format=%Y年%m月%d日%H时%M分%S秒</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230215 18:12:59.510" level="INFO">${time_end} = 2023年02月15日18时12分59秒</msg>
+<status status="PASS" starttime="20230215 18:12:59.510" endtime="20230215 18:12:59.510"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${speed_time_e}</var>
+<arg>time.time()</arg>
+<arg>modules=time</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230215 18:12:59.510" level="INFO">${speed_time_e} = 1676455979.5095031</msg>
+<status status="PASS" starttime="20230215 18:12:59.510" endtime="20230215 18:12:59.510"/>
+</kw>
+<kw name="Calculate Time" library="common">
+<var>${time_spend}</var>
+<arg>${speed_time_e}</arg>
+<arg>${speed_time_s}</arg>
+<doc>计算时间花费
+:param time_end: 开始时间
+:param time_start: 结束时间
+:return: 花费的时间，秒</doc>
+<msg timestamp="20230215 18:12:59.511" level="INFO">4.38</msg>
+<msg timestamp="20230215 18:12:59.511" level="INFO">${time_spend} = 4.38</msg>
+<status status="PASS" starttime="20230215 18:12:59.510" endtime="20230215 18:12:59.511"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>打开浏览器结束时间：${time_end}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230215 18:12:59.511" level="INFO">打开浏览器结束时间：2023年02月15日18时12分59秒</msg>
+<status status="PASS" starttime="20230215 18:12:59.511" endtime="20230215 18:12:59.511"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${url}的标题为${browser}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230215 18:12:59.511" level="INFO">http://localhost:8999/emall_ssm_mysql_war_exploded/index/login的标题为chrome</msg>
+<status status="PASS" starttime="20230215 18:12:59.511" endtime="20230215 18:12:59.511"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>本次测试耗时：${time_spend}s</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230215 18:12:59.511" endtime="20230215 18:12:59.511"/>
+</kw>
+<kw name="Should Not Be Equal" library="BuiltIn">
+<arg>${url_title}</arg>
+<arg>${fail_title}</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" starttime="20230215 18:12:59.511" endtime="20230215 18:12:59.511"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${time_spend}&lt;10</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230215 18:12:59.511" endtime="20230215 18:12:59.511"/>
+</kw>
+<status status="PASS" starttime="20230215 18:12:55.132" endtime="20230215 18:12:59.511"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230215 18:12:59.511" endtime="20230215 18:13:02.561"/>
+</kw>
+<status status="PASS" starttime="20230215 18:12:55.132" endtime="20230215 18:13:02.561"/>
+</iter>
+<status status="PASS" starttime="20230215 18:12:55.132" endtime="20230215 18:13:02.561"/>
+</for>
+<status status="PASS" starttime="20230215 18:12:55.132" endtime="20230215 18:13:02.561"/>
+</kw>
+<status status="PASS" starttime="20230215 18:12:55.132" endtime="20230215 18:13:02.561"/>
+</iter>
+<status status="PASS" starttime="20230215 18:12:49.851" endtime="20230215 18:13:02.561"/>
+</for>
+<status status="PASS" starttime="20230215 18:12:49.850" endtime="20230215 18:13:02.561"/>
+</test>
+<status status="PASS" starttime="20230215 18:12:49.758" endtime="20230215 18:13:02.561"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="链接检查">链接检查</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.9.7 on win32)" generated="20230215 22:52:17.447" rpa="false" schemaversion="3">
+<suite id="s1" name="链接检查" source="D:\file\python\水果商城自动化测试系统\用例脚本区\链接检查.robot">
+<test id="s1-t1" name="链接检查测试" line="20">
+<kw name="Split Str" library="common">
+<var>@{browser_list}</var>
+<arg>${浏览器列表}</arg>
+<doc>分隔字符串
+:param s: 需要分割的字符串
+:param i: 分割标注位
+:return:</doc>
+<status status="FAIL" starttime="20230215 22:52:17.487" endtime="20230215 22:52:17.487"/>
+</kw>
+<kw name="Split Str" library="common">
+<var>@{url_list}</var>
+<arg>${链接}</arg>
+<doc>分隔字符串
+:param s: 需要分割的字符串
+:param i: 分割标注位
+:return:</doc>
+<status status="NOT RUN" starttime="20230215 22:52:17.487" endtime="20230215 22:52:17.487"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}'${用例名称}'用例测试开始,描述:${描述}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230215 22:52:17.487" endtime="20230215 22:52:17.487"/>
+</kw>
+<for flavor="IN">
+<var>${i_browser}</var>
+<value>@{browser_list}</value>
+<iter>
+<var name="${i_browser}"/>
+<kw name="open_many_url">
+<arg>${url_list}</arg>
+<arg>${i_browser}</arg>
+<arg>${打开速度}</arg>
+<arg>${失败断言}</arg>
+<doc>自己定义的打开多个浏览器的综合方法</doc>
+<status status="NOT RUN" starttime="20230215 22:52:17.487" endtime="20230215 22:52:17.487"/>
+</kw>
+<status status="NOT RUN" starttime="20230215 22:52:17.487" endtime="20230215 22:52:17.487"/>
+</iter>
+<status status="NOT RUN" starttime="20230215 22:52:17.487" endtime="20230215 22:52:17.487"/>
+</for>
+<status status="FAIL" starttime="20230215 22:52:17.487" endtime="20230215 22:52:17.487">Execution terminated by signal</status>
+</test>
+<status status="FAIL" starttime="20230215 22:52:17.448" endtime="20230215 22:52:17.488"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="链接检查">链接检查</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
